@@ -15,6 +15,7 @@
 }
 
 \usepackage[italian]{babel}
+\usepackage{mathtools}
 
 \title
 {Macchine di Turing Quantistiche}
@@ -61,8 +62,22 @@
 
 \begin{frame}{\subsecname}
 	\begin{itemize}
-	\item Use \texttt{itemize} a lot.
-	\item Use very short sentences or short phrases.
+		\item \textbf{Quantum advantage}: A parità di problema, la complessità temporale degli algoritmi quantistici può essere minore di quella degli algoritmi classici.
+		\item Lo stato di un computer quantistico è una sovrapposizione di stati discreti.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{\subsecname}{}
+	\begin{itemize}
+		\item Per modellare uno stato quantistico si utilizzano gli \textit{spazi di Hilbert}:
+	\end{itemize}
+	\[ \ell^{2} \left ( \mathcal{B} \right ) = \left \{ \phi : \mathcal{B} \rightarrow \mathbb{C} \mid \sum_{\mathcal{C} \in \mathcal{B}} \left | \phi \left ( \mathcal{C} \right ) \right |^{2} < \infty \right \}\]
+	\begin{itemize}
+		\item Per ragioni fisiche, possono essere applicate a gli elementi dello spazio solo \textit{operatori unitari}:
+		\begin{itemize}
+			\item invertibili
+			\item conservano la norma
+		\end{itemize}
 	\end{itemize}
 \end{frame}
 
