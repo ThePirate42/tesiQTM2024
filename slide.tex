@@ -60,20 +60,20 @@
 
 \subsection{Computazione quantistica}
 
-\begin{frame}{\subsecname}
+\begin{frame}{\subsecname}{}
 	\begin{itemize}
 		\item \textbf{Quantum advantage}: A parità di problema, la complessità temporale degli algoritmi quantistici può essere minore di quella degli algoritmi classici.
 		\item Lo stato di un computer quantistico è una sovrapposizione di stati discreti.
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{\subsecname}{}
+\begin{frame}{\subsecname}{Spazi di Hilbert}
 	\begin{itemize}
 		\item Per modellare uno stato quantistico si utilizzano gli \textit{spazi di Hilbert}:
 	\end{itemize}
 	\[ \ell^{2} \left ( \mathcal{B} \right ) = \left \{ \phi : \mathcal{B} \rightarrow \mathbb{C} \mid \sum_{\mathcal{C} \in \mathcal{B}} \left | \phi \left ( \mathcal{C} \right ) \right |^{2} < \infty \right \}\]
 	\begin{itemize}
-		\item Per ragioni fisiche, possono essere applicate a gli elementi dello spazio solo \textit{operatori unitari}:
+		\item Per ragioni fisiche, possono essere applicati agli elementi dello spazio solo \textit{operatori unitari}:
 		\begin{itemize}
 			\item invertibili
 			\item conservano la norma
@@ -83,9 +83,35 @@
 
 \subsection{Macchina di Turing}
 
+\begin{frame}{\subsecname}{}
+	\centering\includegraphics[width=6.5cm]{Turing_machine_2b.svg.png}
+	\begin{itemize}
+		\item Modello matematico per una macchina che esegue un certo algoritmo.
+		\item \textbf{Funzioni calcolabili}: Funzioni \( f : \mathbb{N} \rightarrow \mathbb{N} \) che sono calcolabili da una macchina di Turing.
+	\end{itemize}
+\end{frame}
+
 \section{Macchina di Turing Quantistica}
 
-\subsection{Q-configurazioni}
+\subsection{Configurazioni}
+
+\begin{frame}{\subsecname}{}
+	\begin{itemize}
+		\item Una configurazione, ovvero lo stato di una macchina di Turing, è una quadrupla:
+		\[ \left \langle \alpha, q, \beta, i \right \rangle \in \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \]
+		\item \textbf{Q-configurazioni}: Elementi di \( \ell^{2}_{1} \left ( \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \right ) \).
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{\subsecname}{Contatore}
+	\begin{itemize}
+		\item Come mantenere inalterato il risultato dopo il raggiungimento di uno stato finale?
+		\item Soluzione: aggiungere un contatore, la configurazione diventa:
+		\[ \left \langle \alpha, q, \beta, i, n \right \rangle \in \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \times \mathbb{N} \]
+		Chiamiamo questo insieme \(\mathfrak{C}_M\).
+		\item Le q-configurazioni diventano elementi di: \( \ell^{2}_{1} \left ( \mathfrak{C}_M \right ) \).
+	\end{itemize}
+\end{frame}
 
 \subsection{Funzione δ}
 
@@ -93,7 +119,7 @@
 
 \subsection{Condizioni di unitarietà}
 
-\section{Quantum computable functions}
+\section{Funzioni calcolabili quantistiche}
 
 \subsection{Dominio e codominio}
 
