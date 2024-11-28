@@ -17,6 +17,8 @@
 \usepackage[italian]{babel}
 \usepackage{mathtools}
 
+\def\spacedmiddle#1{\mathrel{}\middle#1\mathrel{}}
+
 \title
 {Macchine di Turing Quantistiche}
 
@@ -71,7 +73,7 @@
 	\begin{itemize}
 		\item Per modellare uno stato quantistico si utilizzano gli \textit{spazi di Hilbert}:
 	\end{itemize}
-	\[ \ell^{2} \left ( \mathcal{B} \right ) = \left \{ \phi : \mathcal{B} \rightarrow \mathbb{C} \mid \sum_{\mathcal{C} \in \mathcal{B}} \left | \phi \left ( \mathcal{C} \right ) \right |^{2} < \infty \right \}\]
+	\[ \ell^{2} \left ( \mathcal{B} \right ) = \left \{ \phi : \mathcal{B} \rightarrow \mathbb{C} \spacedmiddle | \sum_{\mathcal{C} \in \mathcal{B}} \left | \phi \left ( \mathcal{C} \right ) \right |^{2} < \infty \right \}\]
 	\begin{itemize}
 		\item Per ragioni fisiche, possono essere applicati agli elementi dello spazio solo \textit{operatori unitari}:
 		\begin{itemize}
@@ -87,7 +89,7 @@
 	\centering\includegraphics[width=6.5cm]{Turing_machine_2b.svg.png}
 	\begin{itemize}
 		\item Modello matematico per una macchina che esegue un certo algoritmo.
-		\item \textbf{Funzioni calcolabili}: Funzioni \( f : \mathbb{N} \rightarrow \mathbb{N} \) che sono calcolabili da una macchina di Turing.
+		\item \textbf{Funzioni calcolabili}: Funzioni parziali \( f : \mathbb{N} \rightarrow \mathbb{N} \) che sono calcolabili da una macchina di Turing.
 	\end{itemize}
 \end{frame}
 
@@ -113,18 +115,60 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Funzione δ}
+\subsection{Funzione \texorpdfstring{\(\delta\)}{δ}}
+
+\begin{frame}{\subsecname}{}
+	\begin{itemize}
+		\item
+	\end{itemize}
+\end{frame}
 
 \subsection{Macchina di Turing Quantistica}
 
-\subsection{Condizioni di unitarietà}
+\begin{frame}{\subsecname}{}
+	\begin{itemize}
+		\item
+	\end{itemize}
+\end{frame}
+
+\subsection{Unitarietà}
+
+\begin{frame}{\subsecname}{}
+	\begin{itemize}
+		\item Perché l'operatore, visto in forma matriciale, sia unitario:
+		\begin{enumerate}
+			\item Deve avere le colonne con norma 1 (perché la norma sia sempre conservata)
+			\item Ogni coppia di colonne deve essere ortogonale, ovvero due configurazioni pure non possono sovrapporsi dopo aver applicato l'operatore
+		\end{enumerate}
+		\item Esiste un teorema che garantisce l'unitarietà se \(\delta\) rispetta certe condizioni.
+	\end{itemize}
+\end{frame}
 
 \section{Funzioni calcolabili quantistiche}
 
-\subsection{Dominio e codominio}
+\subsection{Definizione}
+
+\begin{frame}{\secname}{}
+	\begin{itemize}
+		\item Una \textit{Partial Probability Distribution (PPD)} è una funzione \( \mathcal{P} : \mathbb{N} \rightarrow \mathbb{R}_{[0,1]} \) tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) \le 1 \)
+		\item \textbf{Funzioni calcolabili quantistiche}: Funzioni \( f : \ell^{2}_{1} \left ( \mathbb{N} \right ) \rightarrow PPD \) che sono calcolabili da una Macchina di Turing Quantistica.
+	\end{itemize}
+\end{frame}
 
 \subsection{Categorie di terminazione}
 
+\begin{frame}{\subsecname}{}
+	\begin{enumerate}
+		\item
+	\end{enumerate}
+\end{frame}
+
 \section{Misurazioni}
+
+\begin{frame}{\secname}{}
+	\begin{itemize}
+		\item
+	\end{itemize}
+\end{frame}
 
 \end{document}
