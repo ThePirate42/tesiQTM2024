@@ -64,8 +64,9 @@
 
 \begin{frame}{\subsecname}{}
 	\begin{itemize}
-		\item \textbf{Quantum advantage}: A parità di problema, la complessità temporale degli algoritmi quantistici può essere minore di quella degli algoritmi classici.
-		\item Lo stato di un computer quantistico è una sovrapposizione di stati discreti.
+		\item Lo stato di un computer quantistico è una sovrapposizione di stati discreti
+		\item TODO: parlare di qubit (osservezione distrugge parte dell'informazione)
+		\item \textbf{Quantum advantage}: A parità di problema, la complessità temporale degli algoritmi quantistici può essere minore di quella degli algoritmi classici
 	\end{itemize}
 \end{frame}
 
@@ -75,11 +76,23 @@
 	\end{itemize}
 	\[ \ell^{2} \left ( \mathcal{B} \right ) = \left \{ \phi : \mathcal{B} \rightarrow \mathbb{C} \spacedmiddle | \sum_{\mathcal{C} \in \mathcal{B}} \left | \phi \left ( \mathcal{C} \right ) \right |^{2} < \infty \right \}\]
 	\begin{itemize}
+		\item TODO: parlare di \(\ell^{2}_{1}\)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{\subsecname}{Operatori}
+	\begin{itemize}
+		\item TODO: perché servono operatori
 		\item Per ragioni fisiche, possono essere applicati agli elementi dello spazio solo \textit{operatori unitari}:
 		\begin{itemize}
 			\item invertibili
 			\item conservano la norma
 		\end{itemize}
+		\item Perché l'operatore, visto in forma matriciale, sia unitario:
+		\begin{enumerate}
+			\item Deve avere le colonne con norma 1 (perché la norma sia sempre conservata)
+			\item Ogni coppia di colonne deve essere ortogonale, ovvero due configurazioni pure non possono sovrapporsi dopo aver applicato l'operatore
+		\end{enumerate}
 	\end{itemize}
 \end{frame}
 
@@ -88,18 +101,19 @@
 \begin{frame}{\subsecname}{}
 	\centering\includegraphics[width=6.5cm]{Turing_machine_2b.svg.png}
 	\begin{itemize}
-		\item Modello matematico per una macchina che esegue un certo algoritmo.
+		\item Modello matematico per descrivere funzioni calcolabili da un algoritmo
 		\item \textbf{Funzioni calcolabili}: Funzioni parziali \( f : \mathbb{N} \rightarrow \mathbb{N} \) che sono calcolabili da una macchina di Turing.
 	\end{itemize}
 \end{frame}
 
-\section{Macchina di Turing Quantistica}
+\section{Macchina di Turing quantistica}
 
 \subsection{Configurazioni}
 
 \begin{frame}{\subsecname}{}
+	\centering\includegraphics[width=6.5cm]{Turing_machine_2b.svg.png}
 	\begin{itemize}
-		\item Una configurazione, ovvero lo stato di una macchina di Turing, è una quadrupla:
+		\item Una configurazione di una macchina di Turing è:
 		\[ \left \langle \alpha, q, \beta, i \right \rangle \in \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \]
 		\item \textbf{Q-configurazioni}: Elementi di \( \ell^{2}_{1} \left ( \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \right ) \).
 	\end{itemize}
@@ -115,44 +129,40 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Funzione \texorpdfstring{\(\delta\)}{δ}}
+\subsection{Pre-macchina di Turing quantistica}
 
 \begin{frame}{\subsecname}{}
 	\begin{itemize}
-		\item
+		\item Funzione \(\delta\):
 	\end{itemize}
+		\[ \delta : \left ( \mathcal{Q} \backslash \mathcal{Q}_{t} \right ) \times \Sigma \rightarrow \ell^{2}_{1} \left ( \left ( \mathcal{Q} \backslash \mathcal{Q}_{s} \right ) \times \Sigma \times \mathbb{D} \right ) \]
 \end{frame}
 
-\subsection{Macchina di Turing Quantistica}
+\subsection{Operatore di transizione}
 
 \begin{frame}{\subsecname}{}
 	\begin{itemize}
-		\item
-	\end{itemize}
-\end{frame}
-
-\subsection{Unitarietà}
-
-\begin{frame}{\subsecname}{}
-	\begin{itemize}
-		\item Perché l'operatore, visto in forma matriciale, sia unitario:
-		\begin{enumerate}
-			\item Deve avere le colonne con norma 1 (perché la norma sia sempre conservata)
-			\item Ogni coppia di colonne deve essere ortogonale, ovvero due configurazioni pure non possono sovrapporsi dopo aver applicato l'operatore
-		\end{enumerate}
-		\item Esiste un teorema che garantisce l'unitarietà se \(\delta\) rispetta certe condizioni.
+		\item Esiste un teorema che garantisce l'unitarietà se \(\delta\) rispetta certe condizioni
 	\end{itemize}
 \end{frame}
 
 \section{Funzioni calcolabili quantistiche}
 
-\subsection{Definizione}
+\subsection{Dominio e codominio}
 
-\begin{frame}{\secname}{}
+\begin{frame}{\secname}{\subsecname}
 	\begin{itemize}
 		\item Una \textit{Partial Probability Distribution (PPD)} è una funzione \( \mathcal{P} : \mathbb{N} \rightarrow \mathbb{R}_{[0,1]} \) tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) \le 1 \)
 		\item Una \textit{Probability Distribution (PD)} è una \textit{PPD} tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) = 1 \)
-		\item \textbf{Funzioni calcolabili quantistiche}: Funzioni \( f : \ell^{2}_{1} \left ( \mathbb{N} \right ) \rightarrow PPD \) che sono calcolabili da una Macchina di Turing Quantistica.
+		\item Prendiamo in considerazione funzioni di forma \( f : \ell^{2}_{1} \left ( \mathbb{N} \right ) \rightarrow PPD \)
+	\end{itemize}
+\end{frame}
+
+\subsection{Definizione}
+
+\begin{frame}{\secname}{\subsecname}
+	\begin{itemize}
+		\item \textbf{Funzioni calcolabili quantistiche}: Funzioni \( f : \ell^{2}_{1} \left ( \mathbb{N} \right ) \rightarrow PPD \) che sono calcolabili da una Macchina di Turing quantistica.
 	\end{itemize}
 \end{frame}
 
@@ -168,6 +178,14 @@
 \end{frame}
 
 \section{Misurazioni}
+
+\begin{frame}{\secname}{}
+	\begin{itemize}
+		\item
+	\end{itemize}
+\end{frame}
+
+\section{Conclusione}
 
 \begin{frame}{\secname}{}
 	\begin{itemize}
