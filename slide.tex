@@ -151,6 +151,7 @@
 \begin{frame}{\secname}{}
 	\begin{itemize}
 		\item Una \textit{Partial Probability Distribution (PPD)} è una funzione \( \mathcal{P} : \mathbb{N} \rightarrow \mathbb{R}_{[0,1]} \) tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) \le 1 \)
+		\item Una \textit{Probability Distribution (PD)} è una \textit{PPD} tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) = 1 \)
 		\item \textbf{Funzioni calcolabili quantistiche}: Funzioni \( f : \ell^{2}_{1} \left ( \mathbb{N} \right ) \rightarrow PPD \) che sono calcolabili da una Macchina di Turing Quantistica.
 	\end{itemize}
 \end{frame}
@@ -158,8 +159,11 @@
 \subsection{Categorie di terminazione}
 
 \begin{frame}{\subsecname}{}
+	Una data computazione può:
 	\begin{enumerate}
-		\item
+		\item Produrre una \textit{PD} in un numero di passi finito.
+		\item Non produrre una \textit{PD} in un numero di passi finito, ma avere una \textit{PD} come \textit{PPD} limite.
+		\item Non avere una \textit{PD} come \textit{PPD} limite.
 	\end{enumerate}
 \end{frame}
 
