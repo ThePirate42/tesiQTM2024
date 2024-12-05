@@ -83,7 +83,7 @@
 
 \begin{frame}{\subsecname}{Spazi di Hilbert}
 	\begin{itemize}
-		\item Per modellare uno stato quantistico si utilizzano gli \textit{spazi di Hilbert}:
+		\item Per modellare uno stato quantistico si utilizzano gli \textit{spazi di Hilbert}
 		\[ \ell^{2} \left ( \mathcal{B} \right ) = \left \{ \phi : \mathcal{B} \rightarrow \mathbb{C} \spacedmiddle | \sum_{\mathcal{C} \in \mathcal{B}} \left | \phi \left ( \mathcal{C} \right ) \right |^{2} < \infty \right \}\]
 		\item Prendiamo in considerazione solo \(\ell^{2}_{1}\)
 		\[ \ell^{2}_{1} \left ( \mathcal{B} \right ) = \left \{ \phi \in \ell^{2} \left ( \mathcal{B} \right ) \spacedmiddle | \left \| \phi \right \|^{2} = 1 \right \}\]
@@ -93,12 +93,12 @@
 \begin{frame}{\subsecname}{Operatori}
 	\begin{itemize}
 		\item L'equivalente delle porte logiche classiche sono gli operatori lineari
-		\item Possono essere usati solo \textit{operatori unitari}:
+		\item Possono essere usati solo \textit{operatori unitari}
 		\begin{itemize}
 			\item invertibili
 			\item conservano la norma
 		\end{itemize}
-		\item Perché l'operatore, visto in forma matriciale, sia unitario:
+		\item Perché l'operatore, visto in forma matriciale, sia unitario
 		\begin{enumerate}
 			\item Deve avere colonne con norma 1 (perché la norma sia sempre conservata)
 			\item Ogni coppia di colonne deve essere ortogonale, ovvero due configurazioni pure non possono sovrapporsi dopo aver applicato l'operatore
@@ -112,7 +112,7 @@
 	\centering\includegraphics[width=6.5cm]{Turing_machine_2b.svg.png}
 	\begin{itemize}
 		\item Modello matematico per descrivere funzioni calcolabili da un algoritmo
-		\item \textbf{Funzioni calcolabili}: Funzioni parziali \( f : \mathbb{N} \rightarrow \mathbb{N} \) che sono calcolabili da una macchina di Turing.
+		\item \textbf{Funzioni calcolabili}: Funzioni parziali \( f : \mathbb{N} \rightarrow \mathbb{N} \) modellabili da una macchina di Turing
 	\end{itemize}
 \end{frame}
 
@@ -123,10 +123,10 @@
 \begin{frame}{\subsecname}{}
 	\centering\includegraphics[width=6.5cm]{Turing_machine_2b.svg.png}
 	\begin{itemize}
-		\item Una configurazione di una macchina di Turing è:
+		\item Una configurazione di una macchina di Turing è
 		\[ \left \langle \alpha, q, \beta, i \right \rangle \in \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \]
-		\item \textit{Q-configurazioni}: Elementi di \( \ell^{2}_{1} \left ( \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \times \mathbb{N} \right ) \).
-		\item Definiamo \( \mathfrak{C}_M = \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \times \mathbb{N} \).
+		\item \textit{Q-configurazioni}: Elementi di \( \ell^{2}_{1} \left ( \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \times \mathbb{N} \right ) \)
+		\item Definiamo \( \mathfrak{C}_M = \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \times \mathbb{N} \)
 	\end{itemize}
 \end{frame}
 
@@ -136,7 +136,7 @@
 	\begin{itemize}
 		\item Una pre-macchina di Turing quantistica è una tupla
 		\[ M = \left \langle \Sigma \times \mathcal{Q} \times \mathcal{Q}_{s} \times \mathcal{Q}_{t} \times \delta_{0} \times q_{i} \times q_{f} \right \rangle \]
-		\item Funzione \(\delta_{0}\):
+		\item Funzione \(\delta_{0}\)
 		\[ \delta_{0} : \left ( \mathcal{Q} \backslash \mathcal{Q}_{t} \right ) \times \Sigma \rightarrow \ell^{2}_{1} \left ( \left ( \mathcal{Q} \backslash \mathcal{Q}_{s} \right ) \times \Sigma \times \mathbb{D} \right ) \]
 		\item Una pre-macchina di Turing quantistica è una macchina di Turing quantistica se l'operatore di transizione \( U_{M} \) è unitario
 	\end{itemize}
@@ -194,20 +194,12 @@
 \subsection{Categorie di terminazione}
 
 \begin{frame}{\subsecname}{}
-	Una data computazione può:
+	Una data computazione può
 	\begin{enumerate}
 		\item Produrre una \textit{PD} in un numero di passi finito
 		\item Non produrre una \textit{PD} in un numero di passi finito, ma avere una \textit{PD} come \textit{PPD} limite
 		\item Non avere una \textit{PD} come \textit{PPD} limite
 	\end{enumerate}
-\end{frame}
-
-\section{Misurazioni}
-
-\begin{frame}{\secname}{}
-	\begin{itemize}
-		\item
-	\end{itemize}
 \end{frame}
 
 \section{Conclusione}
