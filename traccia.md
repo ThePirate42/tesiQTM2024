@@ -14,6 +14,8 @@ operatore unitario
 
 ### Parte su macchina di Turing? (1 slide)
 
+piccolo discorso di transizione tra le due parti
+
 modella funzione da n in n
 
 ## Quantum Turing Machine

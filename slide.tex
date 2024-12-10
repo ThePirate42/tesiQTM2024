@@ -106,7 +106,7 @@
 \begin{frame}{\subsecname}{Operatori}
 	\begin{itemize}
 		\item<+-> Trasformazione stato quantistico = operatore lineare = \\
-		matrice \( \#\mathcal{B} \times \#\mathcal{B} \)
+		matrice \( \mathcal{B} \times \mathcal{B} \)
 		\item<+-> Possono essere usati solo \alert{operatori unitari}
 		\begin{itemize}
 			\item invertibili \(\rightarrow\) meccanica quantistica è reversibile
@@ -138,14 +138,14 @@
 	\centering\includegraphics[width=6.5cm]{Turing_machine_2b.png}\\
 	\only<1,2>{
 		\alert{Configurazione} di una macchina di Turing
-		\[ \left \langle \alpha, q, \beta, i \right \rangle \in \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \]
+		\[ \left \langle \alpha, q, \beta, i \right \rangle \in \Sigma^{\star} \times \mathcal{Q} \times \Sigma^{\star} \times \mathbb{Z} \]
 	}
 	\only<2->{
-		\[ \conf = \Sigma^{*} \times \mathcal{Q} \times \Sigma^{*} \times \mathbb{Z} \times \mathbb{N} \]
+		\[ \conf = \Sigma^{\star} \times \mathcal{Q} \times \Sigma^{\star} \times \mathbb{Z} \times \mathbb{N} \]
 	}
 	\only<3->{
-		\alert{Q-configurazioni}\\
-		elementi di \( \hiluninorm \left ( \conf \right ) \) = sovrapposizione di configurazioni
+		\alert{Q-configurazione}\\
+		elemento di \( \hiluninorm \left ( \conf \right ) \) = sovrapposizione di configurazioni
 	}
 \end{frame}
 
@@ -165,6 +165,7 @@
 
 \begin{frame}{\subsecname}{}
 	\begin{itemize}
+		\item<+-> \( U_{M} : \hil \left ( \conf \right ) \rightarrow \hil \left ( \conf \right ) \)
 		\item<+-> Definiamo \( U_{M} \) su ogni \(\ket{C} \) con \( C \in \conf \) \par
 		\centering\includegraphics[width=7.5cm]{transition2.png}
 		\item<+-> Una pre-macchina di Turing quantistica è una \alert{macchina di Turing quantistica} se \( U_{M} \) è unitario
@@ -178,20 +179,13 @@
 
 \begin{frame}{\secname}{\subsecname}
 	\begin{itemize}
+		\item<+-> Una \alert{computazione} è una sequenza \(\ket{\phi_{i}}\) tale che
+		\[\ket{\phi_{i}} = U_{M}^{i}\ket{\phi}\] %TODO: cambiare in sequenza con frecce
+		\(\ket{\phi_{0}}\) è una q-configurazione iniziale
 		\item<+-> Una \alert{\foreignlanguage{english}{Partial Probability Distribution} (PPD)} è una funzione \( \mathcal{P} : \mathbb{N} \rightarrow \mathbb{R}_{[0,1]} \) tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) \le 1 \)\par
 		Una \alert{\foreignlanguage{english}{Probability Distribution} (PD)} è una \textit{PPD} tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) = 1 \)
 		\item<+-> A ogni \( \ket{\phi} \) si può associare una PPD \( \mathcal{P}_{\ket{\phi}} \)\par
-		\( \mathcal{P}_{\ket{\phi}} \left ( n \right ) = \) probabilità di \( \ket{\phi} \) di collassare su una configurazione finale con \(n\) simboli \(1\) sul nastro
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{\secname}{\subsecname}
-	\begin{itemize}
-		\item<+-> Una \alert{computazione} \(K^{M}_{\ket{\phi}}\) è una sequenza \(\ket{\phi_{i}}\) tale che
-		\begin{enumerate}
-			\item \(\ket{\phi_{0}} = \ket{\phi}\) è una q-configurazione finale
-			\item \(\ket{\phi_{i}} = U_{M}^{i}\ket{\phi}\)
-		\end{enumerate}
+		\( \mathcal{P}_{\ket{\phi}} \left ( n \right ) = \) probabilità di ottenere una configurazione finale con \(n\) simboli \(1\) sul nastro osservando \( \ket{\phi} \)
 		\item<+-> A ogni computazione si associa una sequenza di PPD \( \mathcal{P}_{\ket{\phi_{i}}} \)
 		\item<+-> La sequenza \(\sum_{n \in \mathbb{N}} \mathcal{P}_{\ket{\phi_{i}}} \left ( n \right )\) è crescente
 	\end{itemize}
@@ -201,7 +195,7 @@
 
 \begin{frame}{\secname}{\subsecname}
 	\begin{itemize}
-		\item<1-> Prendiamo in considerazione funzioni di forma \( f : \hiluninorm \left ( \mathbb{N} \right ) \rightarrow PPD \)
+		\item<1-> Ci interessano funzioni di forma \( f : \hiluninorm \left ( \mathbb{N} \right ) \rightarrow PPD \)
 		\item<2-> \( \mathcal{P} = \lim_{n \to \infty} \mathcal{P}_{\ket{\phi_{i}}} \) è l'\alert{output calcolato} di M
 		\item<2-> Scegliamo una codifica da \( \hiluninorm \left ( \mathbb{N} \right ) \) a \( \hiluninorm \left ( \conf^{init} \right ) \)
 		\item<3-> \alert{Funzioni calcolabili quantistiche}: Funzioni \( f : \hiluninorm \left ( \mathbb{N} \right ) \rightarrow PPD \) modellabili da una Macchina di Turing quantistica
