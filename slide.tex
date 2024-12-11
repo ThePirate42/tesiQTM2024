@@ -199,12 +199,12 @@
 
 \begin{frame}{\subsecname}{}
 	\begin{itemize}
-		\item<1-> Una \alert{computazione} è una sequenza \(\left (\ket{\phi_i} \right )_{i\in\mathbb{N}}\) con \(\ket{\phi_{0}}\) iniziale tale che
+		\item<1-> Una \alert{computazione} è una sequenza \(\left (\phi_i \right )_{i\in\mathbb{N}}\) con \(\phi_{0}\) iniziale tale che
 		\begin{alignat*}{7}
-			&\ket{\phi_{0}} &&\rightarrow &&\ket{\phi_{1}} = U_{M} \left (\ket{\phi_{0}} \right ) \rightarrow &&\dots &&\rightarrow &&\ket{\phi_{i}} = U_{M} \left (\ket{\phi_{i-1}} \right ) \rightarrow &&\dots \\
-			\onslide<2->{&\mathcal{P}_{\ket{\phi_{0}}} &&\rightarrow &&\mathcal{P}_{\ket{\phi_{1}}} \xrightarrow{\hphantom{aaaaaaaaaaaaaa}} &&\dots &&\rightarrow &&\mathcal{P}_{\ket{\phi_{i}}} \xrightarrow{\hphantom{aaaaaaaaaaaaaaaa}} &&\dots }
+			&\phi_{0} &&\rightarrow &&\phi_{1} = U_{M} \left (\phi_{0} \right ) \rightarrow &&\dots &&\rightarrow &&\phi_{i} = U_{M} \left (\phi_{i-1} \right ) \rightarrow &&\dots \\
+			\onslide<2->{&\mathcal{P}_{\phi_{0}} &&\rightarrow &&\mathcal{P}_{\phi_{1}} \xrightarrow{\hphantom{aaaaaaaaaaaaaa}} &&\dots &&\rightarrow &&\mathcal{P}_{\phi_{i}} \xrightarrow{\hphantom{aaaaaaaaaaaaaaaa}} &&\dots }
 		\end{alignat*}
-		\onslide<2-> \( \mathcal{P}_{\ket{\phi}} \left ( n \right ) = \) probabilità di ottenere una configurazione finale con \(n\) simboli \(1\) sul nastro osservando \( \ket{\phi} \) \\
+		\onslide<2-> \( \mathcal{P}_{\phi} \left ( n \right ) = \) probabilità di ottenere una configurazione finale con \(n\) simboli \(1\) sul nastro osservando \( \phi \) \\
 		\item<3-> \alert{\foreignlanguage{english}{Partial Probability Distribution} (PPD)}: funzione \( \mathcal{P} : \mathbb{N} \rightarrow \mathbb{R}_{[0,1]} \) tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) \le 1 \)\par
 		\alert{\foreignlanguage{english}{Probability Distribution} (PD)}: \textit{PPD} tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) = 1 \)
 	\end{itemize}
@@ -216,8 +216,8 @@
 	\begin{itemize}
 		\item<+-> Ci interessano funzioni di forma \[ f : \hiluninorm \left ( \mathbb{N} \right ) \rightarrow PPD \]
 		\item<+-> Codifichiamo \( \hiluninorm \left ( \mathbb{N} \right ) \) in \( \hiluninorm \left ( \conf^{init} \right ) \)
-		\item<+-> \( f_M(\ket{\psi}) = \lim_{i \to \infty} \mathcal{P}_{\ket{\phi_{i}}} \) è la \alert{funzione calcolata} da \(M\) \\
-		\(\ket{\phi_0}\) = codifica di \(\ket{\psi} \in \hiluninorm \left ( \mathbb{N} \right )\)
+		\item<+-> \( f_M(\psi) = \lim_{i \to \infty} \mathcal{P}_{\phi_{i}} \) è la \alert{funzione calcolata} da \(M\) \\
+		\(\phi_0\) = codifica di \(\psi \in \hiluninorm \left ( \mathbb{N} \right )\)
 		\item<+-> \alert{Funzioni calcolabili quantistiche}: funzioni della forma \(f_M\)
 	\end{itemize}
 \end{frame}
