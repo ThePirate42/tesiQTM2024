@@ -121,7 +121,12 @@
 \end{frame}
 
 \subsection{Macchina di Turing}
-%TODO slide di transizione
+\begin{frame}{\subsecname}{}
+	\begin{itemize}
+		\item Modello basato su qubit molto vicino all'implementazione fisica
+		\item Ci interessa un modello più astratto, come la macchina di Turing per la computazione classica
+	\end{itemize}
+\end{frame}
 
 \begin{frame}{\subsecname}{}
 	\centering\includegraphics[width=6.5cm]{Turing_machine_2b.png}
@@ -167,7 +172,7 @@
 \begin{frame}{\subsecname}{}
 	\begin{itemize}
 		\item<+-> \( U_{M} : \hil \left ( \conf \right ) \rightarrow \hil \left ( \conf \right ) \)
-		\item<+-> Definiamo \( U_{M} \) su ogni \(\ket{C} \) con \( C \in \conf \) \par
+		\item<+-> Definiamo \( U_{M} \) su ogni \( C \in \conf \) \par
 		\centering\includegraphics[width=7.5cm]{transition2.png}
 		\item<+-> Una pre-macchina di Turing quantistica è una \alert{macchina di Turing quantistica} se \( U_{M} \) è unitario
 		\item<+-> \( U_{M} \) unitario se \(\delta\) rispetta certe condizioni
@@ -216,11 +221,16 @@
 \section{Conclusione}
 
 \begin{frame}{\secname}{}
-	\begin{itemize}%TODO
-		\item citazione articolo
-		\item omesse misurazioni
-		\item precedenti modelli
+	\begin{itemize}
+		\item<+-> Il modello di MTQ qui presentato è quello di Guerrini, Martini e Masin, pubblicato nel 2020
+		\item<+-> Non ho parlato del protocollo di misurazione
+		\item<+-> Esistono modelli precedenti, in particolare quello di Deutsch (1985) e di Bernstein e Vazirani (1997)
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{}
+	\centering \huge
+	\emph{Grazie per l'attenzione!}
 \end{frame}
 
 \end{document}
