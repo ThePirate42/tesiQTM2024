@@ -79,6 +79,7 @@
 \end{frame}
 
 \begin{frame}{\subsecname}{}
+	\[\frac{1}{\sqrt{2}} \ket{\Zero} + \frac{1}{\sqrt{2}} \ket{\One} \qquad \frac{1}{\sqrt{2}} \ket{\Zero} + i \frac{1}{\sqrt{2}} \ket{\One}\]
 	\begin{itemize}
 		\item<+-> Osservazione:
 		\begin{itemize}
@@ -87,8 +88,7 @@
 			\item Collasso su \( \ket{\Zero} \) o su \( \ket{\One} \)
 		\end{itemize}
 		\item<+-> \foreignlanguage{english}{Quantum advantage}: per certi problemi, \\
-		complessità temporale algoritmi quantistici \(<\) \\
-		complessità temporale algoritmi classici
+		complessità algoritmi quantistici \(<\) complessità algoritmi classici
 	\end{itemize}
 \end{frame}
 
@@ -121,6 +121,7 @@
 \end{frame}
 
 \subsection{Macchina di Turing}
+%TODO slide di transizione
 
 \begin{frame}{\subsecname}{}
 	\centering\includegraphics[width=6.5cm]{Turing_machine_2b.png}
@@ -175,25 +176,24 @@
 
 \section{Funzioni calcolabili quantistiche}
 
-\subsection{PPD e computazioni}
+\subsection{Computazioni e osservazioni}
 
-\begin{frame}{\secname}{\subsecname}
+\begin{frame}{\subsecname}{}
 	\begin{itemize}
-		\item<+-> Una \alert{computazione} è una sequenza \(\ket{\phi_{i}}\) tale che
-		\[\ket{\phi_{i}} = U_{M}^{i}\ket{\phi}\] %TODO: cambiare in sequenza con frecce
-		\(\ket{\phi_{0}}\) è una q-configurazione iniziale
-		\item<+-> Una \alert{\foreignlanguage{english}{Partial Probability Distribution} (PPD)} è una funzione \( \mathcal{P} : \mathbb{N} \rightarrow \mathbb{R}_{[0,1]} \) tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) \le 1 \)\par
-		Una \alert{\foreignlanguage{english}{Probability Distribution} (PD)} è una \textit{PPD} tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) = 1 \)
-		\item<+-> A ogni \( \ket{\phi} \) si può associare una PPD \( \mathcal{P}_{\ket{\phi}} \)\par
-		\( \mathcal{P}_{\ket{\phi}} \left ( n \right ) = \) probabilità di ottenere una configurazione finale con \(n\) simboli \(1\) sul nastro osservando \( \ket{\phi} \)
-		\item<+-> A ogni computazione si associa una sequenza di PPD \( \mathcal{P}_{\ket{\phi_{i}}} \)
-		\item<+-> La sequenza \(\sum_{n \in \mathbb{N}} \mathcal{P}_{\ket{\phi_{i}}} \left ( n \right )\) è crescente
+		\item<1-> Una \alert{computazione} è una sequenza \(\ket{\phi_{i}}\) con \(\ket{\phi_{0}}\) iniziale tale che
+		\begin{alignat*}{5}
+			&\ket{\phi_{0}} \xrightarrow{U_{M}} &&\ket{\phi_{1}} \xrightarrow{U_{M}} &&\ket{\phi_{2}} \xrightarrow{U_{M}} &&\dots \xrightarrow{U_{M}} &&\ket{\phi_{i}} = U_{M} \left (\ket{\phi_{i-1}} \right ) \\
+			\onslide<2->{&\mathcal{P}_{\ket{\phi_{0}}} \rightarrow &&\mathcal{P}_{\ket{\phi_{1}}} \rightarrow &&\mathcal{P}_{\ket{\phi_{2}}} \rightarrow &&\dots \rightarrow &&\mathcal{P}_{\ket{\phi_{i}}}}
+		\end{alignat*}
+		\onslide<2-> \( \mathcal{P}_{\ket{\phi}} \left ( n \right ) = \) probabilità di ottenere una configurazione finale con \(n\) simboli \(1\) sul nastro osservando \( \ket{\phi} \) \\
+		\item<3-> \alert{\foreignlanguage{english}{Partial Probability Distribution} (PPD)}: funzione \( \mathcal{P} : \mathbb{N} \rightarrow \mathbb{R}_{[0,1]} \) tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) \le 1 \)\par
+		\alert{\foreignlanguage{english}{Probability Distribution} (PD)}: \textit{PPD} tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) = 1 \)
 	\end{itemize}
 \end{frame}
 
 \subsection{Definizione}
 
-\begin{frame}{\secname}{\subsecname}
+\begin{frame}{\secname}{}
 	\begin{itemize}
 		\item<1-> Ci interessano funzioni di forma \( f : \hiluninorm \left ( \mathbb{N} \right ) \rightarrow PPD \)
 		\item<2-> \( \mathcal{P} = \lim_{n \to \infty} \mathcal{P}_{\ket{\phi_{i}}} \) è l'\alert{output calcolato} di M
@@ -208,7 +208,7 @@
 	Una data computazione può
 	\begin{enumerate}
 		\item<+-> Produrre una \textit{PD} in un numero di passi finito
-		\item<+-> Non produrre una \textit{PD} in un numero di passi finito, ma avere una \textit{PD} come \textit{PPD} limite
+		\item<+-> Non produrre una \textit{PD} in un numero di passi finito, ma avere una \textit{PD} come limite (\foreignlanguage{english}{\textit{Almost sure termination}})
 		\item<+-> Non avere una \textit{PD} come \textit{PPD} limite
 	\end{enumerate}
 \end{frame}
@@ -216,8 +216,10 @@
 \section{Conclusione}
 
 \begin{frame}{\secname}{}
-	\begin{itemize}
-		\item
+	\begin{itemize}%TODO
+		\item citazione articolo
+		\item omesse misurazioni
+		\item precedenti modelli
 	\end{itemize}
 \end{frame}
 
