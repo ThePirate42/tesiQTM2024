@@ -121,24 +121,25 @@
 \end{frame}
 
 \subsection{Macchina di Turing}
+
 \begin{frame}{\subsecname}{}
-\begin{block}{fino ad ora}
-modello fisico (hardware) 
-\begin{itemize}
-\item basato su qbit 
-\item estende circuiti classici 
-\end{itemize}
-\end{block}
+	\begin{block}{fino ad ora}
+		modello fisico (hardware)
+		\begin{itemize}
+			\item basato su qbit
+			\item estende circuiti classici
+		\end{itemize}
+	\end{block}
 
-\pause \vspace{2ex}
+	\pause \vspace{2ex}
 
-\begin{block}{obiettivo}
-formalismo più astratto (software) 
-\begin{itemize}
-\item descrive tutti gli algoritmi quantistici
-\item estende Macchine di Turing classiche 
-\end{itemize}
-\end{block}
+	\begin{block}{obiettivo}
+		formalismo più astratto (software)
+		\begin{itemize}
+			\item descrive tutti gli algoritmi quantistici
+			\item estende Macchine di Turing classiche
+		\end{itemize}
+	\end{block}
 \end{frame}
 
 \begin{frame}{\subsecname}{}
@@ -198,10 +199,10 @@ formalismo più astratto (software)
 
 \begin{frame}{\subsecname}{}
 	\begin{itemize}
-		\item<1-> Una \alert{computazione} è una sequenza \((\ket{\phi_i})_{i\in\mathbb{N}}\) con \(\ket{\phi_{0}}\) iniziale tale che
-		\begin{alignat*}{5}
-			&\ket{\phi_{0}} \xrightarrow{U_{M}} &&\ket{\phi_{1}} \xrightarrow{U_{M}} &&\ket{\phi_{2}} \xrightarrow{U_{M}} &&\dots \xrightarrow{U_{M}} &&\ket{\phi_{i}} = U_{M} \left (\ket{\phi_{i-1}} \right ) \\
-			\onslide<2->{&\mathcal{P}_{\ket{\phi_{0}}} \rightarrow &&\mathcal{P}_{\ket{\phi_{1}}} \rightarrow &&\mathcal{P}_{\ket{\phi_{2}}} \rightarrow &&\dots \rightarrow &&\mathcal{P}_{\ket{\phi_{i}}}}
+		\item<1-> Una \alert{computazione} è una sequenza \(\left (\ket{\phi_i} \right )_{i\in\mathbb{N}}\) con \(\ket{\phi_{0}}\) iniziale tale che
+		\begin{alignat*}{7}
+			&\ket{\phi_{0}} &&\rightarrow &&\ket{\phi_{1}} = U_{M} \left (\ket{\phi_{0}} \right ) \rightarrow &&\dots &&\rightarrow &&\ket{\phi_{i}} = U_{M} \left (\ket{\phi_{i-1}} \right ) \rightarrow &&\dots \\
+			\onslide<2->{&\mathcal{P}_{\ket{\phi_{0}}} &&\rightarrow &&\mathcal{P}_{\ket{\phi_{1}}} \xrightarrow{\hphantom{aaaaaaaaaaaaaa}} &&\dots &&\rightarrow &&\mathcal{P}_{\ket{\phi_{i}}} \xrightarrow{\hphantom{aaaaaaaaaaaaaaaa}} &&\dots }
 		\end{alignat*}
 		\onslide<2-> \( \mathcal{P}_{\ket{\phi}} \left ( n \right ) = \) probabilità di ottenere una configurazione finale con \(n\) simboli \(1\) sul nastro osservando \( \ket{\phi} \) \\
 		\item<3-> \alert{\foreignlanguage{english}{Partial Probability Distribution} (PPD)}: funzione \( \mathcal{P} : \mathbb{N} \rightarrow \mathbb{R}_{[0,1]} \) tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) \le 1 \)\par
@@ -213,12 +214,11 @@ formalismo più astratto (software)
 
 \begin{frame}{\secname}{}
 	\begin{itemize}
-		\item<1-> Ci interessano funzioni di forma \[ f : \hiluninorm \left ( \mathbb{N} \right ) \rightarrow PPD \]
-		\item<2-> Codifichiamo \( \hiluninorm \left ( \mathbb{N} \right ) \) in \( \hiluninorm \left ( \conf^{init} \right ) \)
-		\item<2-> \( f_M(\psi) = \lim_{i \to \infty} \mathcal{P}_{\ket{\phi_{i}}} \) è la \alert{funzione calcolata} da $M$  \\ 
-$\phi_0$ = codifica di $\psi \in hiluninorm \left ( \mathbb{N} \right )$ 
-		\item<3-> \alert{Funzioni calcolabili quantistiche}: funzioni della forma $F_M$ 
-% \( f : \hiluninorm \left ( \mathbb{N} \right ) \rightarrow PPD \) modellabili da una Macchina di Turing quantistica
+		\item<+-> Ci interessano funzioni di forma \[ f : \hiluninorm \left ( \mathbb{N} \right ) \rightarrow PPD \]
+		\item<+-> Codifichiamo \( \hiluninorm \left ( \mathbb{N} \right ) \) in \( \hiluninorm \left ( \conf^{init} \right ) \)
+		\item<+-> \( f_M(\ket{\psi}) = \lim_{i \to \infty} \mathcal{P}_{\ket{\phi_{i}}} \) è la \alert{funzione calcolata} da \(M\) \\
+		\(\ket{\phi_0}\) = codifica di \(\ket{\psi} \in \hiluninorm \left ( \mathbb{N} \right )\)
+		\item<+-> \alert{Funzioni calcolabili quantistiche}: funzioni della forma \(f_M\)
 	\end{itemize}
 \end{frame}
 
