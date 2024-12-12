@@ -73,7 +73,7 @@
 	\begin{align*}
 			\onslide<2->{1 \ket{\Zero} + 0 \ket{\One}
 			&\qquad  0 \ket{\Zero} +  1 \ket{\One} \\\\}
-			\onslide<3->{\frac{1}{\sqrt{2}} \ket{\Zero} + \frac{1}{\sqrt{2}} \ket{\One}
+			\onslide<2->{\frac{1}{\sqrt{2}} \ket{\Zero} + \frac{1}{\sqrt{2}} \ket{\One}
 			&\qquad \frac{1}{\sqrt{2}} \ket{\Zero} + i \frac{1}{\sqrt{2}} \ket{\One}}
 	\end{align*}
 \end{frame}
@@ -112,11 +112,6 @@
 			\item invertibili \(\rightarrow\) meccanica quantistica è reversibile
 			\item conservano la norma \(\rightarrow\) per rimanere in \(\hiluninorm \left ( \mathcal{B} \right )\)
 		\end{itemize}
-		\item<+-> Unitarietà in forma matriciale
-		\begin{itemize}
-			\item Colonne con norma 1 (per conservare la norma)
-			\item Ogni coppia di colonne deve essere ortogonale
-		\end{itemize}
 	\end{itemize}
 \end{frame}
 
@@ -146,7 +141,7 @@
 	\centering\includegraphics[width=6.5cm]{Turing_machine_2b.png}
 	\begin{itemize}
 		\item<+-> Modello matematico per descrivere tutti gli algoritmi
-		\item<+-> \alert{Funzioni calcolabili}: Funzioni parziali \( f : \mathbb{N} \rightarrow \mathbb{N} \) modellabili da una macchina di Turing
+		\item<+-> \alert{Funzioni calcolabili}: Funzioni parziali \( f : \mathbb{N} \rightarrow \mathbb{N} \) calcolate da una macchina di Turing
 	\end{itemize}
 \end{frame}
 
@@ -178,7 +173,7 @@
 	\begin{center}
 		Funzione di transizione
 	\end{center}
-	\[ \delta : \left ( \mathcal{Q} \backslash \mathcal{Q}_{t} \right ) \times \Sigma \rightarrow \hiluninorm \left ( \left ( \mathcal{Q} \backslash \mathcal{Q}_{s} \right ) \times \Sigma \times \mathbb{D} \right ) \]
+	\[ \delta : \left ( \mathcal{Q} \backslash \mathcal{Q}_{t} \right ) \times \Sigma \rightarrow \hiluninorm \left ( \left ( \mathcal{Q} \backslash \mathcal{Q}_{s} \right ) \times \Sigma \times \{L, R\} \right ) \]
 \end{frame}
 
 \subsection{Operatore di transizione}
@@ -186,7 +181,7 @@
 \begin{frame}{\subsecname}{}
 	\begin{itemize}
 		\item<+-> \( U_{M} : \hil \left ( \conf \right ) \rightarrow \hil \left ( \conf \right ) \)
-		\item<+-> Definiamo \( U_{M} \) su ogni \( C \in \conf \) \par
+		\item<+-> Definiamo \( U_{M} \) su ogni \( C \in \conf \) a partire da \(\delta\) \par
 		\centering\includegraphics[width=7.5cm]{transition2.png}
 		\item<+-> Una pre-macchina di Turing quantistica è una \alert{macchina di Turing quantistica} se \( U_{M} \) è unitario
 		\item<+-> \( U_{M} \) unitario se \(\delta\) rispetta certe condizioni
@@ -200,14 +195,27 @@
 \begin{frame}{\subsecname}{}
 	\begin{itemize}
 		\item<1-> Una \alert{computazione} è una sequenza \(\left (\ket{\phi_i} \right )_{i\in\mathbb{N}}\) con \(\ket{\phi_{0}}\) iniziale tale che
-		\begin{alignat*}{7}
-			&\ket{\phi_{0}} &&\rightarrow &&\ket{\phi_{1}} = U_{M} \left (\ket{\phi_{0}} \right ) \rightarrow &&\dots &&\rightarrow &&\ket{\phi_{i}} = U_{M} \left (\ket{\phi_{i-1}} \right ) \rightarrow &&\dots \\
-			\onslide<2->{&\mathcal{P}_{\ket{\phi_{0}}} &&\rightarrow &&\mathcal{P}_{\ket{\phi_{1}}} \xrightarrow{\hphantom{aaaaaaaaaaaaaa}} &&\dots &&\rightarrow &&\mathcal{P}_{\ket{\phi_{i}}} \xrightarrow{\hphantom{aaaaaaaaaaaaaaaa}} &&\dots }
+		\begin{alignat*}{8}
+			&\ket{\phi_{0}} \xrightarrow{U_{M}} &&\ket{\phi_{1}} \xrightarrow{U_{M}} &&\ket{\phi_{2}} \xrightarrow{U_{M}} &&\dots \xrightarrow{U_{M}} &&\ket{\phi_{i}} \xrightarrow{U_{M}} &&\dots \\\\
+			\onslide<2->{&\mathcal{P}_{\ket{\phi_{0}}} \rightarrow &&\mathcal{P}_{\ket{\phi_{1}}} \rightarrow &&\mathcal{P}_{\ket{\phi_{2}}} \rightarrow &&\dots \rightarrow &&\mathcal{P}_{\ket{\phi_{i}}} \rightarrow &&\dots}
 		\end{alignat*}
 		\onslide<2-> \( \mathcal{P}_{\ket{\phi}} \left ( n \right ) = \) probabilità di ottenere una configurazione finale con \(n\) simboli \(1\) sul nastro osservando \( \ket{\phi} \) \\
 		\item<3-> \alert{\foreignlanguage{english}{Partial Probability Distribution} (PPD)}: funzione \( \mathcal{P} : \mathbb{N} \rightarrow \mathbb{R}_{[0,1]} \) tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) \le 1 \)\par
 		\alert{\foreignlanguage{english}{Probability Distribution} (PD)}: \textit{PPD} tale che \( \sum_{n \in \mathbb{N}} \mathcal{P} \left ( n \right ) = 1 \)
 	\end{itemize}
+\end{frame}
+
+\subsection{Categorie di terminazione}
+
+\begin{frame}{\subsecname}{}
+	\onslide<1->{\[\mathcal{P}_{\ket{\phi_{0}}} \rightarrow \mathcal{P}_{\ket{\phi_{1}}} \rightarrow \mathcal{P}_{\ket{\phi_{2}}} \rightarrow \dots \rightarrow \mathcal{P}_{\ket{\phi_{i}}} \rightarrow \dots\]
+	Prendiamo in considerazione il \(\lim_{i \to \infty} \mathcal{P}_{\ket{\phi_{i}}}\) \\}
+	\onslide<2->{Una data computazione può}
+	\begin{enumerate}
+		\item<2-> Produrre una \textit{PD} in un numero di passi finito
+		\item<3-> Non produrre una \textit{PD} in un numero di passi finito, ma avere una \textit{PD} come limite (\foreignlanguage{english}{\textit{Almost sure termination}})
+		\item<4-> Non avere una \textit{PD} come \textit{PPD} limite
+	\end{enumerate}
 \end{frame}
 
 \subsection{Definizione}
@@ -218,26 +226,19 @@
 		\item<+-> Codifichiamo \( \hiluninorm \left ( \mathbb{N} \right ) \) in \( \hiluninorm \left ( \conf^{init} \right ) \)
 		\item<+-> \( f_M(\ket{\psi}) = \lim_{i \to \infty} \mathcal{P}_{\ket{\phi_{i}}} \) è la \alert{funzione calcolata} da \(M\) \\
 		\(\ket{\phi_0}\) = codifica di \(\ket{\psi} \in \hiluninorm \left ( \mathbb{N} \right )\)
-		\item<+-> \alert{Funzioni calcolabili quantistiche}: funzioni della forma \(f_M\)
+		\item<+-> \alert{Funzione calcolabile quantistica}: funzione calcolata da \(M\) per qualche \(M\)
 	\end{itemize}
-\end{frame}
-
-\subsection{Categorie di terminazione}
-
-\begin{frame}{\subsecname}{}
-	Una data computazione può
-	\begin{enumerate}
-		\item<+-> Produrre una \textit{PD} in un numero di passi finito
-		\item<+-> Non produrre una \textit{PD} in un numero di passi finito, ma avere una \textit{PD} come limite (\foreignlanguage{english}{\textit{Almost sure termination}})
-		\item<+-> Non avere una \textit{PD} come \textit{PPD} limite
-	\end{enumerate}
 \end{frame}
 
 \section{Conclusione}
 
 \begin{frame}{\secname}{}
 	\begin{itemize}
-		\item<+-> Il modello di MTQ qui presentato è quello di Guerrini, Martini e Masin, pubblicato nel 2020
+		\item<+-> Il modello di MTQ qui presentato è preso da\\
+		\begin{quote}
+			Guerrini, Martini e Masin \\
+			Quantum Turing Machines: Computations and Measurements (2020)
+		\end{quote}
 		\item<+-> Non ho parlato del protocollo di misurazione
 		\item<+-> Esistono modelli precedenti, in particolare quello di Deutsch (1985) e di Bernstein e Vazirani (1997)
 	\end{itemize}
