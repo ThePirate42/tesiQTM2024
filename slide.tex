@@ -1,4 +1,3 @@
-% LTeX: language=it
 % LTeX: enabled=false
 \documentclass{beamer}
 
@@ -16,6 +15,7 @@
 	
 }
 
+% LTeX: enabled=true
 \usepackage[italian]{babel}
 \usepackage{mathtools}
 \usepackage{mleftright}
@@ -30,7 +30,6 @@
 \newcommand{\Zero}{\alert{\mathbf{0}}}
 \newcommand{\One}{\alert{\mathbf{1}}}
 
-% LTeX: enabled=true
 \title
 {Macchine di Turing Quantistiche}
 
@@ -121,12 +120,12 @@
 	\begin{block}{fino ad ora}
 		modello fisico (hardware)
 		\begin{itemize}
-			\item basato su qbit
+			\item basato su qubit
 			\item estende circuiti classici
 		\end{itemize}
 	\end{block}
 
-	\pause \vspace{2ex}
+	\onslide<2-> \vspace{2ex}
 
 	\begin{block}{obiettivo}
 		formalismo più astratto (software)
@@ -237,7 +236,7 @@
 		\item<+-> Il modello di MTQ qui presentato è preso da\\
 		\begin{quote}
 			Guerrini, Martini e Masin \\
-			Quantum Turing Machines: Computations and Measurements (2020)
+			\foreignlanguage{english}{Quantum Turing Machines: Computations and Measurements} (2020)
 		\end{quote}
 		\item<+-> Non ho parlato del protocollo di misurazione
 		\item<+-> Esistono modelli precedenti, in particolare quello di Deutsch (1985) e di Bernstein e Vazirani (1997)
